@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/sota/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>SOTA 对比 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="../ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">SOTA 对比</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/results/" class="dropdown-item">结果预览</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ablation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../pmd/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/sota.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#uef-net-zsad-sota-mvtec-ad-visa" class="nav-link">UEF-Net ZSAD SOTA 对比调研（MVTec AD / VisA）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#0" class="nav-link">0. 口径说明（必读）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 方法档案表（设定 / 骨干 / 分辨率 / 归一化 / 来源）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-mvtec-ad15" class="nav-link">2. MVTec AD（15 类均值）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-visa12" class="nav-link">3. VisA（12 类均值）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-uef-net" class="nav-link">4. 与 UEF-Net 的口径可比性结论（逐方法）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-uef-net-sota" class="nav-link">5. UEF-Net 在该对比中的定位、相对 SOTA 的优势与风险</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">附：第三方交叉核对来源（与论文原文互证）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="uef-net-zsad-sota-mvtec-ad-visa">UEF-Net ZSAD SOTA 对比调研（MVTec AD / VisA）</h1>
+<blockquote>
+<p>全部数值来自论文原文或第三方同协议对比表，逐条附来源 URL；缺失项标"—（待补）"，未编造数据。UEF-Net 数值以本文档结果为准。</p>
+</blockquote>
+<h2 id="0">0. 口径说明（必读）</h2>
+<ol>
+<li><strong>类别数口径</strong>：MVTec 一列均为 <strong>15 类均值</strong>，VisA 一列均为 <strong>12 类均值</strong>（各原文一致）。</li>
+<li><strong>可比等级定义</strong>：</li>
+<li>◎ <strong>设定最接近</strong>：纯零样本、无训练、CLIP ViT-L-14、输入分辨率≥448、同数据集。注意：严格意义上<strong>没有任何方法</strong>同时满足"纯零样本+无训练+同数据集+avg_norm+分辨率≥448"全部条件（UEF-Net 的逐层记忆库 z-score avg_norm 是独有的），◎ 级方法唯一差异在特征聚合口径（非 avg_norm），已逐项说明。</li>
+<li>○ <strong>免训练但口径不同</strong>：纯零样本/免训练，但骨干、分辨率或特征聚合方式与 UEF-Net 不同。</li>
+<li>× <strong>需训练或需少量正常样本</strong>：严格说非零样本免训练，仅作参照。</li>
+<li><strong>榜单可得性</strong>：PapersWithCode 的 MVTec AD 总榜与 MVTec 官方 benchmark 页均<strong>不收录零样本 CLIP 类方法</strong>（PWC 镜像 CodeSOTA 榜仅 11 个有训练方法如 SimpleNet/PatchCore/EfficientAD；官方 benchmark 为 MVTec AD 2/VAND 赛道榜，非经典 15 类协议）。因此本方向对比数值只能以各方法<strong>论文原文</strong>为准——这是 ZSAD 方向对比的常态，论文中不应引用 PWC 作为这些方法的来源。</li>
+<li><strong>同一方法多来源数值不一致处</strong>（主值取论文原文，差异注明）：</li>
+<li>AnomalyCLIP：原文 MVTec 91.5/91.1/81.4 vs CLIP-AD 论文复现值 91.8/90.9/81.6；</li>
+<li>APRIL-GAN VisA ImgAUROC：原文 78.0 vs SOWA(arXiv 2407.03634) 引值 81.2；</li>
+<li>同名方法警示：PromptAD 有两篇同名论文（WACV 2024 零样本版 vs CVPR 2024 少样本版），本表取 <strong>WACV 2024《PromptAD: Zero-shot Anomaly Detection using Text Prompts》</strong>；InCTRL 主表仅报图像级 AUROC，像素级/PRO 未公开。</li>
+</ol>
+<hr />
+<h2 id="1">1. 方法档案表（设定 / 骨干 / 分辨率 / 归一化 / 来源）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>年份 / 发表地</th>
+<th>设定类别</th>
+<th>骨干</th>
+<th>输入分辨率</th>
+<th>归一化口径</th>
+<th>主要来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UEF-Net</strong></td>
+<td>—</td>
+<td>纯零样本零重训（CBE 181K 训练于辅助数据集头）</td>
+<td>CLIP ViT-L-14 (336px)</td>
+<td>518×518</td>
+<td>z-score avg_norm 等权逐层记忆库</td>
+<td>本文档结果</td>
+</tr>
+<tr>
+<td>MuSc</td>
+<td>2024, ICLR</td>
+<td>纯零样本（测试集互打分）</td>
+<td>CLIP ViT-L-14-336</td>
+<td>518×518</td>
+<td>非 avg_norm（MSM 互打分 + RsCIN）</td>
+<td>https://arxiv.org/abs/2401.16753</td>
+</tr>
+<tr>
+<td>PA-CLIP</td>
+<td>2025, arXiv preprint</td>
+<td>纯零样本（测试集建双记忆库）</td>
+<td>CLIP ViT-L-14-336</td>
+<td>518×518</td>
+<td>非 avg_norm（cosine+top-K 差分融合）</td>
+<td>https://arxiv.org/abs/2503.01292</td>
+</tr>
+<tr>
+<td>WinCLIP</td>
+<td>2023, CVPR</td>
+<td>纯零样本（提示集成）</td>
+<td>CLIP ViT-B/16+</td>
+<td>240×240</td>
+<td>未报告（多尺度 harmonic avg）</td>
+<td>https://arxiv.org/abs/2303.14814</td>
+</tr>
+<tr>
+<td>SAA+</td>
+<td>2023, CVPRW (VAND Challenge)</td>
+<td>纯零样本（提示工程）</td>
+<td>GroundingDINO + SAM + WRN50</td>
+<td>400×400</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2306.09067</td>
+</tr>
+<tr>
+<td>CLIP-AD (SDP)</td>
+<td>2024, IJCAI</td>
+<td>纯零样本（architecture/feature surgery）</td>
+<td>CLIP ViT-B/16+</td>
+<td>240×240</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2311.00453</td>
+</tr>
+<tr>
+<td>AnoCLIP+ (AnoVL v2)</td>
+<td>2024, arXiv preprint</td>
+<td>提示工程零样本 + TTA</td>
+<td>CLIP ViT-B-16+</td>
+<td>240×240</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2308.15939</td>
+</tr>
+<tr>
+<td>UniVAD</td>
+<td>2024, arXiv preprint</td>
+<td>1-normal-shot 免训练</td>
+<td>CLIP-L/14@336 + DINOv2-G/14</td>
+<td>448×448</td>
+<td>cosine distance</td>
+<td>https://arxiv.org/abs/2412.03342</td>
+</tr>
+<tr>
+<td>APRIL-GAN</td>
+<td>2023, CVPRW (VAND Challenge)</td>
+<td>需训练（4 线性层，跨数据集监督）</td>
+<td>CLIP ViT-L/14 (336px)</td>
+<td>训练 518 / 骨干 336</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2305.17382</td>
+</tr>
+<tr>
+<td>CLIP-AD (SDP+)</td>
+<td>2024, IJCAI</td>
+<td>需训练（线性层微调）</td>
+<td>CLIP ViT-B/16+</td>
+<td>240×240</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2311.00453</td>
+</tr>
+<tr>
+<td>AnomalyCLIP</td>
+<td>2024, ICLR</td>
+<td>需训练（可学习文本 prompt，跨集测试集上调）</td>
+<td>CLIP ViT-L/14@336</td>
+<td>518×518</td>
+<td>未报告（OpenCLIP 标准化）</td>
+<td>https://arxiv.org/abs/2310.18961</td>
+</tr>
+<tr>
+<td>PromptAD</td>
+<td>2024, WACV</td>
+<td>需训练（双分支解码器，leave-one-class-out）</td>
+<td>CLIP ViT-B/16</td>
+<td>224×224</td>
+<td>未报告</td>
+<td>https://openaccess.thecvf.com/content/WACV2024/papers/Li_PromptAD_Zero-Shot_Anomaly_Detection_Using_Text_Prompts_WACV_2024_paper.pdf</td>
+</tr>
+<tr>
+<td>AnomalyGPT</td>
+<td>2024, <strong>AAAI</strong></td>
+<td>少样本(1/2/4-shot)+需训练（LVLM）</td>
+<td>ImageBind-Huge + Vicuna-7B</td>
+<td>224×224</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2308.15366</td>
+</tr>
+<tr>
+<td>InCTRL</td>
+<td>2024, CVPR</td>
+<td>少样本(K-shot)+辅助集训练 adapter</td>
+<td>CLIP ViT-B/16+</td>
+<td>240×240</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2403.06495</td>
+</tr>
+<tr>
+<td>AdaCLIP</td>
+<td>2024, ECCV</td>
+<td>需训练（hybrid learnable prompts）</td>
+<td>CLIP ViT-L-14</td>
+<td>未报告</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2407.15795</td>
+</tr>
+<tr>
+<td>VCP-CLIP</td>
+<td>2024, arXiv preprint</td>
+<td>需训练（视觉上下文提示）</td>
+<td>CLIP ViT-L-14-336</td>
+<td>518×518</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2407.12276</td>
+</tr>
+<tr>
+<td>GlocalCLIP</td>
+<td>2024, arXiv preprint</td>
+<td>需训练（全局-局部提示学习）</td>
+<td>OpenCLIP ViT-L</td>
+<td>518×518</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2411.06071</td>
+</tr>
+<tr>
+<td>MRAD-CLIP</td>
+<td>2026, ICLR</td>
+<td>需训练（记忆检索先验注入提示）</td>
+<td>CLIP ViT-L-14@336</td>
+<td>未报告</td>
+<td>cosine retrieval</td>
+<td>https://arxiv.org/abs/2602.00522</td>
+</tr>
+<tr>
+<td>KAnoCLIP</td>
+<td>2025, ICASSP</td>
+<td>需训练（KnPL 提示学习 + adapter）</td>
+<td>CLIP ViT-L/14@336</td>
+<td>336×336</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2501.03786</td>
+</tr>
+<tr>
+<td>FiLo</td>
+<td>2024, ACM Multimedia</td>
+<td>需训练（可学习文本模板 + MMCI）</td>
+<td>CLIP ViT-L/14@336</td>
+<td>336×336</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2404.13671</td>
+</tr>
+<tr>
+<td>AA-CLIP</td>
+<td>2025, CVPR</td>
+<td>需训练（两阶段 Residual Adapter）</td>
+<td>OpenCLIP ViT-L/14</td>
+<td>518×518</td>
+<td>未报告</td>
+<td>https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_AA-CLIP_Enhancing_Zero-Shot_Anomaly_Detection_via_Anomaly-Aware_CLIP_CVPR_2025_paper.pdf</td>
+</tr>
+<tr>
+<td>GenCLIP</td>
+<td>2025, arXiv preprint</td>
+<td>需训练（通用提示 + 双分支）</td>
+<td>CLIP ViT-L-14</td>
+<td>未报告</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2504.14919</td>
+</tr>
+<tr>
+<td>AF-CLIP</td>
+<td>2025, arXiv preprint</td>
+<td>需训练（Attention Adapter + 提示）</td>
+<td>CLIP ViT-L-14</td>
+<td>未报告</td>
+<td>未报告</td>
+<td>https://arxiv.org/abs/2507.19949</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-mvtec-ad15">2. MVTec AD（15 类均值）</h2>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>方法</th>
+<th>ImgAUROC</th>
+<th>PixAUROC</th>
+<th>PRO</th>
+<th>数值来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td><strong>UEF-Net</strong></td>
+<td><strong>0.9876</strong></td>
+<td><strong>0.9691</strong></td>
+<td><strong>0.9712</strong></td>
+<td>本文档结果</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>MuSc</td>
+<td>0.978</td>
+<td>0.973</td>
+<td>0.938</td>
+<td>arXiv 2401.16753, Table 17</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>PA-CLIP</td>
+<td>0.984</td>
+<td>0.975</td>
+<td>0.937</td>
+<td>arXiv 2503.01292, Table 1</td>
+</tr>
+<tr>
+<td>○</td>
+<td>WinCLIP (0-shot)</td>
+<td>0.918</td>
+<td>0.851</td>
+<td>0.646</td>
+<td>arXiv 2303.14814, Table 1/4</td>
+</tr>
+<tr>
+<td>○</td>
+<td>SAA+</td>
+<td>0.631†</td>
+<td>0.732†</td>
+<td>0.428†</td>
+<td>†CLIP-AD 复现口径 arXiv 2311.00453, Table 1（原文仅报 max-F1-pixel=0.394, arXiv 2306.09067）</td>
+</tr>
+<tr>
+<td>○</td>
+<td>CLIP-AD (SDP)</td>
+<td>0.909</td>
+<td>0.875</td>
+<td>0.753</td>
+<td>arXiv 2311.00453, Table 1</td>
+</tr>
+<tr>
+<td>○</td>
+<td>AnoCLIP+ (TFA+TTA)</td>
+<td>0.925</td>
+<td>0.906</td>
+<td>0.778</td>
+<td>arXiv 2308.15939v2, Table 1/2</td>
+</tr>
+<tr>
+<td>○</td>
+<td>UniVAD (1-shot 免训练)</td>
+<td>0.978</td>
+<td>0.965</td>
+<td>—（未报告）</td>
+<td>arXiv 2412.03342, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>APRIL-GAN (ZS head)</td>
+<td>0.861</td>
+<td>0.876</td>
+<td>0.440</td>
+<td>arXiv 2305.17382v2, Table 3</td>
+</tr>
+<tr>
+<td>×</td>
+<td>CLIP-AD (SDP+)</td>
+<td>0.922</td>
+<td>0.912</td>
+<td>0.851</td>
+<td>arXiv 2311.00453, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AnomalyCLIP</td>
+<td>0.915</td>
+<td>0.911</td>
+<td>0.814</td>
+<td>arXiv 2310.18961v6, Table 1（CLIP-AD 复现值 91.8/90.9/81.6）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>PromptAD (WACV 24)</td>
+<td>0.908</td>
+<td>0.921</td>
+<td>0.728</td>
+<td>CVF WACV2024 paper, Table 1/2（10 异常样例版 ImgAUROC 0.912；仅 MVTec，无 VisA）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AnomalyGPT (1-shot 迁移)</td>
+<td>0.941</td>
+<td>0.953</td>
+<td>—（未报告）</td>
+<td>arXiv 2308.15366v3, Table 2（域内训练版 0.974/0.931, Table 3）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>InCTRL (2-shot)</td>
+<td>0.940</td>
+<td>—（未报告）</td>
+<td>—（未报告）</td>
+<td>arXiv 2403.06495, Table 1（4-shot 0.945 / 8-shot 0.953）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AdaCLIP</td>
+<td>0.892</td>
+<td>0.887</td>
+<td>—（未报告）</td>
+<td>arXiv 2407.15795, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>VCP-CLIP</td>
+<td>0.921</td>
+<td>0.920</td>
+<td>0.873</td>
+<td>arXiv 2407.12276, Table 1/10</td>
+</tr>
+<tr>
+<td>×</td>
+<td>GlocalCLIP</td>
+<td>0.917</td>
+<td>0.914</td>
+<td>0.828</td>
+<td>arXiv 2411.06071, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>MRAD-CLIP</td>
+<td>0.940</td>
+<td>0.930</td>
+<td>0.868</td>
+<td>arXiv 2602.00522, Table 5/6</td>
+</tr>
+<tr>
+<td>×</td>
+<td>KAnoCLIP</td>
+<td>0.931§</td>
+<td>0.943§</td>
+<td>—（未报告）</td>
+<td>arXiv 2501.03786, Table 1（§在 MVTec 上训练的口径，非跨数据集零样本）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>FiLo</td>
+<td>0.912</td>
+<td>0.923</td>
+<td>—（未报告）</td>
+<td>arXiv 2404.13671, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AA-CLIP (full-shot)</td>
+<td>0.905</td>
+<td>0.919</td>
+<td>—（未报告）</td>
+<td>CVF CVPR2025 paper, Table 1/2</td>
+</tr>
+<tr>
+<td>×</td>
+<td>GenCLIP</td>
+<td>0.909</td>
+<td>0.927</td>
+<td>0.881</td>
+<td>arXiv 2504.14919, Table 4</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AF-CLIP</td>
+<td>0.929</td>
+<td>0.923</td>
+<td>—（未报告）</td>
+<td>arXiv 2507.19949, 摘要数值</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-visa12">3. VisA（12 类均值）</h2>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>方法</th>
+<th>ImgAUROC</th>
+<th>PixAUROC</th>
+<th>PRO</th>
+<th>数值来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td><strong>UEF-Net</strong></td>
+<td><strong>0.9427</strong></td>
+<td><strong>0.9826</strong></td>
+<td><strong>0.9858</strong></td>
+<td>本文档结果</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>MuSc</td>
+<td>0.928</td>
+<td>0.988</td>
+<td>0.927</td>
+<td>arXiv 2401.16753, Table 18</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>PA-CLIP</td>
+<td>0.934</td>
+<td>0.988</td>
+<td>0.924</td>
+<td>arXiv 2503.01292, Table 2</td>
+</tr>
+<tr>
+<td>○</td>
+<td>WinCLIP (0-shot)</td>
+<td>0.781</td>
+<td>0.796</td>
+<td>0.568</td>
+<td>arXiv 2303.14814, Table 1/4</td>
+</tr>
+<tr>
+<td>○</td>
+<td>SAA+</td>
+<td>0.711†</td>
+<td>0.740†</td>
+<td>0.368†</td>
+<td>†CLIP-AD 复现口径 arXiv 2311.00453, Table 1（原文仅报 max-F1-pixel=0.271, arXiv 2306.09067）</td>
+</tr>
+<tr>
+<td>○</td>
+<td>CLIP-AD (SDP)</td>
+<td>0.786</td>
+<td>0.881</td>
+<td>0.685</td>
+<td>arXiv 2311.00453, Table 1</td>
+</tr>
+<tr>
+<td>○</td>
+<td>AnoCLIP+ (TFA+TTA)</td>
+<td>0.792</td>
+<td>0.914</td>
+<td>0.750</td>
+<td>arXiv 2308.15939v2, Table 1/2</td>
+</tr>
+<tr>
+<td>○</td>
+<td>UniVAD (1-shot 免训练)</td>
+<td>0.935</td>
+<td>0.982</td>
+<td>—（未报告）</td>
+<td>arXiv 2412.03342, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>APRIL-GAN (ZS head)</td>
+<td>0.780</td>
+<td>0.942</td>
+<td>0.868</td>
+<td>arXiv 2305.17382v2, Table 4（SOWA 引值 ImgAUROC 0.812, arXiv 2407.03634）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>CLIP-AD (SDP+)</td>
+<td>0.783</td>
+<td>0.940</td>
+<td>0.830</td>
+<td>arXiv 2311.00453, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AnomalyCLIP</td>
+<td>0.821</td>
+<td>0.955</td>
+<td>0.870</td>
+<td>arXiv 2310.18961v6, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>PromptAD (WACV 24)</td>
+<td>—（未报告）</td>
+<td>—（未报告）</td>
+<td>—（未报告）</td>
+<td>原文仅在 MVTec/AITEX 评测</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AnomalyGPT (1-shot 迁移)</td>
+<td>0.874</td>
+<td>0.962</td>
+<td>—（未报告）</td>
+<td>arXiv 2308.15366v3, Table 2</td>
+</tr>
+<tr>
+<td>×</td>
+<td>InCTRL (2-shot)</td>
+<td>0.858</td>
+<td>—（未报告）</td>
+<td>—（未报告）</td>
+<td>arXiv 2403.06495, Table 1（4-shot 0.877 / 8-shot 0.887）</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AdaCLIP</td>
+<td>0.858</td>
+<td>0.921</td>
+<td>—（未报告）</td>
+<td>arXiv 2407.15795, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>VCP-CLIP</td>
+<td>0.838</td>
+<td>0.957</td>
+<td>0.907</td>
+<td>arXiv 2407.12276, Table 1/10</td>
+</tr>
+<tr>
+<td>×</td>
+<td>GlocalCLIP</td>
+<td>0.837</td>
+<td>0.959</td>
+<td>0.875</td>
+<td>arXiv 2411.06071, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>MRAD-CLIP</td>
+<td>0.857</td>
+<td>0.959</td>
+<td>0.880</td>
+<td>arXiv 2602.00522, Table 5/6</td>
+</tr>
+<tr>
+<td>×</td>
+<td>KAnoCLIP</td>
+<td>—（未提取）</td>
+<td>—（未提取）</td>
+<td>—（未报告）</td>
+<td>原文片段仅给增量（较基线 +1.5 img-AUC / +2.2 pix-AUC，SEU PALM 版），绝对值待核</td>
+</tr>
+<tr>
+<td>×</td>
+<td>FiLo</td>
+<td>0.839</td>
+<td>0.959</td>
+<td>—（未报告）</td>
+<td>arXiv 2404.13671, Table 1</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AA-CLIP (full-shot)</td>
+<td>0.846</td>
+<td>0.955</td>
+<td>—（未报告）</td>
+<td>CVF CVPR2025 paper, Table 1/2</td>
+</tr>
+<tr>
+<td>×</td>
+<td>GenCLIP</td>
+<td>0.833</td>
+<td>0.953</td>
+<td>0.893</td>
+<td>arXiv 2504.14919, Table 5</td>
+</tr>
+<tr>
+<td>×</td>
+<td>AF-CLIP</td>
+<td>0.885</td>
+<td>0.962</td>
+<td>—（未报告）</td>
+<td>arXiv 2507.19949, 摘要数值</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-uef-net">4. 与 UEF-Net 的口径可比性结论（逐方法）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>可比等级</th>
+<th>一句话差异说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MuSc</td>
+<td>◎ 设定最接近</td>
+<td>同为 CLIP ViT-L-14-336 + 518 + 纯零样本无训练，唯一差异：非 avg_norm（测试集批内互打分 MSM），且需整批测试图同用（transductive 风格）</td>
+</tr>
+<tr>
+<td>PA-CLIP</td>
+<td>◎ 设定最接近</td>
+<td>骨干/分辨率/零样本无训练与 UEF-Net 相同；差异：cosine+top-K 双记忆库差分融合（非 avg_norm），且记忆库取自无标签测试集（批内建库）</td>
+</tr>
+<tr>
+<td>WinCLIP</td>
+<td>○ 免训练但口径不同</td>
+<td>纯零样本但骨干 ViT-B/16+、240×240、harmonic avg 聚合、无记忆库无 z-score</td>
+</tr>
+<tr>
+<td>SAA+</td>
+<td>○ 免训练但口径不同</td>
+<td>纯零样本但骨干为 GroundingDINO+SAM（非 CLIP 路线）、400×400；原文仅报 max-F1-pixel，AUROC/PRO 只有 CLIP-AD 复现口径</td>
+</tr>
+<tr>
+<td>CLIP-AD (SDP)</td>
+<td>○ 免训练但口径不同</td>
+<td>纯零样本但骨干 ViT-B/16+、240×240、靠 architecture/feature surgery 而非记忆库</td>
+</tr>
+<tr>
+<td>AnoCLIP+</td>
+<td>○ 免训练但口径不同</td>
+<td>骨干 ViT-B-16+、240×240，且 TTA 版本在测试时优化少量参数（非全零参数）</td>
+</tr>
+<tr>
+<td>UniVAD</td>
+<td>○ 免训练但口径不同</td>
+<td>免训练但需每类 1 张正常参考图（1-normal-shot）、双骨干 CLIP+DINOv2-G、448 输入、cosine 匹配；不报 PRO</td>
+</tr>
+<tr>
+<td>APRIL-GAN</td>
+<td>× 需训练</td>
+<td>ZS 头也需跨数据集训练 4 个线性层（focal+dice 监督），非纯零样本</td>
+</tr>
+<tr>
+<td>CLIP-AD (SDP+)</td>
+<td>× 需训练</td>
+<td>线性层微调版</td>
+</tr>
+<tr>
+<td>AnomalyCLIP</td>
+<td>× 需训练</td>
+<td>可学习文本 prompt 在另一数据集测试集上训练；骨干/分辨率虽同为 ViT-L/14@336 + 518 但含训练，不可与 UEF-Net 纯零样本直接画等号</td>
+</tr>
+<tr>
+<td>PromptAD</td>
+<td>× 需训练</td>
+<td>WACV 2024 零样本版需训练双分支解码器（leave-one-class-out）、ViT-B/16 + 224；且无 VisA 数值</td>
+</tr>
+<tr>
+<td>AnomalyGPT</td>
+<td>× 少样本+需训练</td>
+<td>LVLM（ImageBind-Huge+Vicuna-7B），1-shot 迁移 + 域内训练两套数值；224 输入、不报 PRO；发表地为 AAAI 2024（非 CVPR/ICLR）</td>
+</tr>
+<tr>
+<td>InCTRL</td>
+<td>× 少样本+需训练</td>
+<td>辅助集训练 adapter + K-shot 正常图；仅报图像级 AUROC，无像素级/PRO</td>
+</tr>
+<tr>
+<td>AdaCLIP</td>
+<td>× 需训练</td>
+<td>ECCV 2024 hybrid learnable prompts（跨数据集训练），分辨率未报告、不报 PRO</td>
+</tr>
+<tr>
+<td>VCP-CLIP</td>
+<td>× 需训练</td>
+<td>视觉上下文提示训练（跨数据集），骨干/分辨率同 UEF-Net 但含训练</td>
+</tr>
+<tr>
+<td>GlocalCLIP</td>
+<td>× 需训练</td>
+<td>全局-局部提示学习，518 输入但含训练</td>
+</tr>
+<tr>
+<td>MRAD-CLIP</td>
+<td>× 需训练</td>
+<td>ICLR 2026 记忆检索，最佳变体 MRAD-CLIP 需训练注入先验；免训练版 MRAD-TF 性能明显下降（VisA PixAUROC 91.0%）</td>
+</tr>
+<tr>
+<td>KAnoCLIP</td>
+<td>× 需训练</td>
+<td>ICASSP 2025，GPT-3.5/Llama3 知识驱动提示学习；其 MVTec 数值为域内训练口径、VisA 绝对值未提取，入库前需补读原文</td>
+</tr>
+<tr>
+<td>FiLo</td>
+<td>× 需训练</td>
+<td>ACM MM 2024，可学习文本模板 + MMCI（Grounding DINO 预定位），336 输入、不报 PRO</td>
+</tr>
+<tr>
+<td>AA-CLIP</td>
+<td>× 需训练</td>
+<td>CVPR 2025 两阶段 Residual Adapter（跨数据集训练），骨干/分辨率同 UEF-Net 但含训练、不报 PRO</td>
+</tr>
+<tr>
+<td>GenCLIP</td>
+<td>× 需训练</td>
+<td>通用提示学习 + 双分支推理，分辨率未报告</td>
+</tr>
+<tr>
+<td>AF-CLIP</td>
+<td>× 需训练</td>
+<td>Attention Adapter 微调，分辨率未报告、不报 PRO</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-uef-net-sota">5. UEF-Net 在该对比中的定位、相对 SOTA 的优势与风险</h2>
+<p><strong>定位</strong>：UEF-Net 是当前零样本工业异常检测阵营中唯一同时做到"CLIP ViT-L-14@336 + 518 输入 + 零重训（推理几乎全零参数）+ 逐层记忆库 z-score avg_norm 等权 + 零参数规则门控"的方法。在 MVTec AD（15 类）与 VisA（12 类）上，其 ImgAUROC（0.9876 / 0.9427）与 PRO（0.9712 / 0.9858）均位居全部 21 个调研方法之首；六数据集等权均值 ImgAUROC 0.9679 / PixAUROC 0.9487 / PRO 0.9416 可作补充主张。</p>
+<p><strong>优势（论文可强调的四个点）</strong>：
+1. <strong>PRO 区域级定位碾压</strong>：对比最强的两个同设定方法 MuSc（0.938/0.927）与 PA-CLIP（0.937/0.924），UEF-Net 的 PRO 在 MVTec 领先 3.3-3.4pp、VisA 领先 5.9-6.2pp——冲突感知门控 + C1-MS 上下文门控对区域重叠度的提升是核心卖点。
+2. <strong>ImgAUROC 全场最高</strong>：MVTec 0.9876 高于 MuSc 0.978 / PA-CLIP 0.984，VisA 0.9427 同样居首。
+3. <strong>零重训优于需训练范式</strong>：全部需训练/少样本方法（AnomalyCLIP 0.915、AdaCLIP 0.892、VCP-CLIP 0.921、GlocalCLIP 0.917、MRAD-CLIP 0.940、AA-CLIP 0.905、GenCLIP 0.909、AF-CLIP 0.929、FiLo 0.912、KAnoCLIP 0.931 域内）在 MVTec ImgAUROC 上普遍落在 0.89-0.94，无一接近 UEF-Net，支持"零样本精细特征工程可超越有训练提示学习"的论述。
+4. <strong>逐图独立推理</strong>：MuSc/PA-CLIP 依赖整批测试图互打分/互建库（transductive 风格），UEF-Net 单图即可推理，工程部署更直接。</p>
+<p><strong>风险与需谨慎措辞之处（审稿防线）</strong>：
+1. <strong>PixAUROC 略处下风</strong>：MuSc（0.973/0.988）与 PA-CLIP（0.975/0.988）的像素级 AUROC 略高于 UEF-Net（0.9691/0.9826，差 0.4-0.6pp）。论文需主动解释：二者 PRO 显著更低，高 PixAUROC 可能源于像素级阈值口径更宽松，区域级精度不足；UEF-Net 以 PRO 为准更稳健。切勿回避此列。
+2. <strong>"零样本"口径自证</strong>：UEF-Net 推理时消费正常样本构建 coreset 记忆库（冻结特征、零参数训练），与 WinCLIP 0-shot"完全不碰参考图"不同，也不同于 MuSc/PA-CLIP"用无标签测试批"。论文应明确定义本方法"零样本 = 不更新任何参数、不重训、无标签利用"，并把"正常样本仅用于冻结特征建库"写入方法章，防止审稿人按 WinCLIP 口径质疑。
+3. <strong>VisA 列的 CBE 训练不对称</strong>：唯一可训练段 CBE（约 181K）训练于 VisA 零样本头，VisA 一列并非完全零参数。论文应主动声明该训练发生在 VisA 头辅助设定、规模极小（0.18M，占模型参数 &lt;0.5%），且 MVTec 列完全零重训；如审稿严格，可补一句"消融证明 CBE 移除后性能下降有限"（如有数据支持）。
+4. <strong>可比性标注</strong>：表中需按本文第 4 节的可比等级加注（◎/○/×），并把 AnomalyCLIP、PromptAD、InCTRL、AnomalyGPT 等"需训练/少样本"方法与 UEF-Net 分开陈述，避免失真对比；AnomalyGPT 发表地应为 AAAI 2024，CLIP-AD 为 IJCAI 2024（均已核实）。
+5. <strong>待核项</strong>：KAnoCLIP 的 VisA 绝对值未在原文抓取片段中呈现（仅增量描述），如论文需收录该行，须补读原文确认；否则从表中删除或标"—（待补）"。</p>
+<hr />
+<h2 id="_1">附：第三方交叉核对来源（与论文原文互证）</h2>
+<ul>
+<li>SOWA（arXiv 2407.03634）Table 5（zero-shot 协议）：WinCLIP 91.8/85.1/64.6、APRIL-GAN 86.1/87.6 等 https://arxiv.org/html/2407.03634v2</li>
+<li>CLIP-AD（arXiv 2311.00453v2）Table 1：WinCLIP、APRIL-GAN、SAA+、AnomalyCLIP 同协议复现/引用值 https://arxiv.org/pdf/2311.00453v2</li>
+<li>AnomalyCLIP 原文 Table 1：https://arxiv.org/html/2310.18961v6</li>
+<li>PA-CLIP 论文引值（MuSc 97.8% MVTec 分类）：https://arxiv.org/html/2503.01292</li>
+<li>ICLR 2024 Proceedings 官方页（MuSc 收录确认）：https://proceedings.iclr.cc/paper_files/paper/2024/file/096b1019463f34eb241e87cfce8dfe16-Paper-Conference.pdf</li>
+<li>综述定位：《Deep Industrial Image Anomaly Detection: A Survey》（arXiv 2301.11514，版本止于 2023-10，不含本表多数方法，仅作范式分类背景）；《Generalized OOD Detection in VLM Era: A Survey》5.1 节（arXiv 2407.21794，定位"VLM-based ZSAD 以 WinCLIP 为起点、2023 后爆发"）</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

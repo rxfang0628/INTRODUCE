@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/method/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>方法架构 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="../ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="../sota/" class="dropdown-item">SOTA 对比</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/results/" class="dropdown-item">结果预览</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../results/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/method.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">方法架构</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-multiscalepatchcore" class="nav-link">1. 多尺度纹理分支（MultiScalePatchCore）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-cmgl" class="nav-link">2. 冻结语义分支（CMGL）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-cbe" class="nav-link">3. 证据融合头（CBE）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-pfb" class="nav-link">4. 证据组合（PFB）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-capgf" class="nav-link">5. 像素门控融合（CAPGF）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 输出层</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">关键超参口径</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">方法架构</h1>
+<p>UEF-Net 的特征与融合流程自上而下分为六段。除 CBE 证据融合头外，其余阶段均为零参数规则算子或冻结特征分支。下图依次给出纹理归一化、证据融合与像素门控三个关键模块的结构。</p>
+<h2 id="1-multiscalepatchcore">1. 多尺度纹理分支（MultiScalePatchCore）</h2>
+<ul>
+<li>零参数；逐层子库 + z-score 归一化（avg_norm）后四层等权聚合。</li>
+<li>特征层取第 6 / 12 / 18 / 24 层，输入分辨率 518×518，每维 1024。</li>
+<li>coreset 抽样比例 0.05；图像异常分取纹理图 top-50 均值。</li>
+</ul>
+<p><img alt="z-score 归一化示意" src="../images/zscore_preview.png" /></p>
+<h2 id="2-cmgl">2. 冻结语义分支（CMGL）</h2>
+<ul>
+<li>CLIP 视觉/文本骨干全程冻结，语义特征在推理时只读。</li>
+<li>语义投影、领域提示等封装在语义分支内；辅助训练只发生在辅助数据集头，不回写骨干。</li>
+</ul>
+<h2 id="3-cbe">3. 证据融合头（CBE）</h2>
+<p>CBE 是全模型唯一可训练段，约 <strong>181,256</strong> 个参数，训练于辅助数据集（VisA）的零样本头；主干评测时冻结使用。结构包含：</p>
+<ul>
+<li>双 EvidenceEncoder：分别编码纹理与语义证据；</li>
+<li>ConflictEstimator：估计两路证据的冲突程度；</li>
+<li>双 AdaptiveDiscount：按冲突对证据置信度做自适应折扣。</li>
+</ul>
+<p><img alt="CBE 证据融合架构" src="../images/cbe_architecture.svg" /></p>
+<h2 id="4-pfb">4. 证据组合（PFB）</h2>
+<ul>
+<li>无参数；采用 Dempster 式组合规则。</li>
+<li>组合后信任质量 <code>m_A + λ·m_U</code>，其中未知度权重 λ = 0.5。</li>
+</ul>
+<h2 id="5-capgf">5. 像素门控融合（CAPGF）</h2>
+<p>CAPGF 为规则型零参数门控，逐像素混合纹理与语义响应：</p>
+<ol>
+<li>多尺度冲突：0.7 局部 3×3 平均池化 + 0.3 全局自适应平均池化；</li>
+<li>门控激活：<code>sigmoid((τ − c)·T)</code>，默认 τ = 0.4、T = 3.0；</li>
+<li>3×3 高斯平滑；</li>
+<li>C1-MS 多尺度上下文门控（尺度 3/5/9，权重 0.5/0.3/0.2）；</li>
+<li>与 0.5 等权融合图逐像素混合；门控关闭态（β=0 / γ=1）与基线逐位一致，作为交叉校验锚点。</li>
+</ol>
+<p><img alt="CAPGF 像素门控架构" src="../images/capgf_architecture.svg" /></p>
+<h2 id="6">6. 输出层</h2>
+<ul>
+<li><strong>图像异常分</strong>：纹理图 top-50 均值；</li>
+<li><strong>像素缺陷图</strong>：门控融合图上采样至 518×518。</li>
+</ul>
+<h2 id="_2">关键超参口径</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特征层</td>
+<td>[6, 12, 18, 24]</td>
+</tr>
+<tr>
+<td>输入分辨率</td>
+<td>518×518</td>
+</tr>
+<tr>
+<td>图像 top-k</td>
+<td>50</td>
+</tr>
+<tr>
+<td>coreset 比例</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>冲突阈值 τ / 温度 T</td>
+<td>0.4 / 3.0</td>
+</tr>
+<tr>
+<td>平滑核</td>
+<td>3×3</td>
+</tr>
+<tr>
+<td>未知度权重 λ</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>上下文网格</td>
+<td>37×37</td>
+</tr>
+<tr>
+<td>逐层库权重</td>
+<td>[0.25, 0.25, 0.25, 0.25]</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

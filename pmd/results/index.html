@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/pmd/results/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>结果预览 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../uefnet/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../uefnet/method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../../uefnet/results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="../../uefnet/ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="../../uefnet/sota/" class="dropdown-item">SOTA 对比</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">结果预览</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../method/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/pmd/results.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">结果预览</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">耳机充电盒（光泽表面：划痕 + 指纹 + 针孔）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">屏幕盖板（玻璃表面细划痕）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">漫反射面板</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">待补充的定量实验</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">结果预览</h1>
+<blockquote>
+<p>当前为<strong>定性验证</strong>：在真实光泽工件上展示缺陷是否被显现；缺陷对比度、信噪比、消融对比与单帧耗时等定量指标待补，暂不报告检测率。</p>
+</blockquote>
+<h2 id="_2">耳机充电盒（光泽表面：划痕 + 指纹 + 针孔）</h2>
+<p>PMD 灰度原图近乎过曝的白壳，人眼几乎看不到缺陷；PMD 斜率图暴露几何划痕，光度通道反过来显现指纹涡纹与针孔；融合结果在一张图里同时给出两类缺陷。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PMD 灰度原图（过曝）</td>
+<td><img alt="PMD 灰度原图" src="../images/erji_01_pmd_gray.jpg" /></td>
+</tr>
+<tr>
+<td>PMD 斜率图（几何划痕）</td>
+<td><img alt="PMD 斜率" src="../images/erji_02_pmd_slopeX.jpg" /></td>
+</tr>
+<tr>
+<td>镜面分量</td>
+<td><img alt="镜面分量" src="../images/erji_03_pmd_spec.jpg" /></td>
+</tr>
+<tr>
+<td>光泽分量</td>
+<td><img alt="光泽分量" src="../images/erji_04_pmd_gloss.jpg" /></td>
+</tr>
+<tr>
+<td>虚拟 PS 渲染图（NW 光源）</td>
+<td><img alt="虚拟 PS" src="../images/erji_05_virtualPS_NW.jpg" /></td>
+</tr>
+<tr>
+<td>PS 法线 X</td>
+<td><img alt="PS 法线" src="../images/erji_06_ps_Nx.jpg" /></td>
+</tr>
+<tr>
+<td>PS 反照率</td>
+<td><img alt="PS 反照率" src="../images/erji_07_ps_albedo.jpg" /></td>
+</tr>
+<tr>
+<td>融合法线 X</td>
+<td><img alt="融合法线" src="../images/erji_08_fused_Nx.jpg" /></td>
+</tr>
+<tr>
+<td>缺陷强度图</td>
+<td><img alt="缺陷强度" src="../images/erji_09_defect_mag.jpg" /></td>
+</tr>
+<tr>
+<td>标准 DoG 浮雕</td>
+<td><img alt="标准浮雕" src="../images/erji_10_emboss_std.jpg" /></td>
+</tr>
+<tr>
+<td>CLAHE 浮雕</td>
+<td><img alt="CLAHE 浮雕" src="../images/erji_11_emboss_clahe.jpg" /></td>
+</tr>
+<tr>
+<td>几何划痕通道</td>
+<td><img alt="几何划痕" src="../images/erji_12_geom_scratch.jpg" /></td>
+</tr>
+<tr>
+<td>光度指纹通道</td>
+<td><img alt="光度指纹" src="../images/erji_13_photo_fingerprint.jpg" /></td>
+</tr>
+<tr>
+<td>最终融合结果</td>
+<td><img alt="最终融合" src="../images/erji_14_fused_ultimate.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">屏幕盖板（玻璃表面细划痕）</h2>
+<p>近空白的光泽盖板上，浮雕 / CLAHE 通道额外显出定位圈之间的发丝划痕与面板微纹理。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>灰度原图</td>
+<td><img alt="盖板原图" src="../images/scr_01_gray.jpg" /></td>
+</tr>
+<tr>
+<td>PMD 斜率 X</td>
+<td><img alt="盖板斜率" src="../images/scr_02_slopeX.jpg" /></td>
+</tr>
+<tr>
+<td>PS 法线 X</td>
+<td><img alt="盖板 PS 法线" src="../images/scr_03_ps_Nx.jpg" /></td>
+</tr>
+<tr>
+<td>CLAHE 浮雕</td>
+<td><img alt="盖板浮雕" src="../images/scr_04_emboss_clahe.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">漫反射面板</h2>
+<p>在更漫反射的表面上，光泽权重自然把信任转向 PS，说明融合权重随零件反射特性自适应，而非假定单一反射特性。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>灰度原图</td>
+<td><img alt="面板原图" src="../images/mz_01_gray.jpg" /></td>
+</tr>
+<tr>
+<td>缺陷结果</td>
+<td><img alt="面板缺陷" src="../images/mz_02_defect.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">待补充的定量实验</h2>
+<ul>
+<li>人工标注缺陷 ROI 上的缺陷对比度与局部信噪比，对比仅 PMD / 仅 PS / 融合三种方案；</li>
+<li>与商用基线结果并排或做差对比；</li>
+<li>消融：固定 0.5 融合（去掉光泽权重）、去掉双边滤波、去掉软阈值；</li>
+<li>单帧耗时统计。</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+# MkDocs 多项目门户配置
+# 部署到 GitHub Pages 仓库 INTRODUCE
+
+site_name: 机器视觉项目集
+site_url: https://rxfang0628.github.io/INTRODUCE/
+repo_url: https://github.com/rxfang0628/INTRODUCE
+docs_dir: docs
+
+theme:
+  name: mkdocs
+
+nav:
+  - 首页: index.md
+  - UEF-Net 零样本异常检测:
+      - 概览: uefnet/index.md
+      - 方法架构: uefnet/method.md
+      - 实验结果: uefnet/results.md
+      - 消融实验: uefnet/ablation.md
+      - SOTA 对比: uefnet/sota.md
+  - PMD—光度立体融合:
+      - 概览: pmd/index.md
+      - 方法流程: pmd/method.md
+      - 结果预览: pmd/results.md

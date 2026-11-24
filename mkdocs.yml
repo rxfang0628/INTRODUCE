@@ -9,6 +9,9 @@ docs_dir: docs
 theme:
   name: mkdocs
 
+extra_css:
+  - css/extra.css
+
 nav:
   - 首页: index.md
   - UEF-Net 零样本异常检测:
@@ -21,4 +24,4 @@ nav:
   - PMD—光度立体融合:
       - 概览: pmd/index.md
       - 方法流程: pmd/method.md
-      - 结果预览: pmd/results.md
+      - 实测结果集: pmd/results.md

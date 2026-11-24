@@ -15,8 +15,9 @@ nav:
       - 概览: uefnet/index.md
       - 方法架构: uefnet/method.md
       - 实验结果: uefnet/results.md
+      - 对比实验: uefnet/sota.md
       - 消融实验: uefnet/ablation.md
-      - SOTA 对比: uefnet/sota.md
+      - 机制分析: uefnet/analysis.md
   - PMD—光度立体融合:
       - 概览: pmd/index.md
       - 方法流程: pmd/method.md

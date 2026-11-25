@@ -21,6 +21,10 @@ nav:
       - 对比实验: uefnet/sota.md
       - 消融实验: uefnet/ablation.md
       - 机制分析: uefnet/analysis.md
+  - PCML 双分支像素融合:
+      - 概览: pcml/index.md
+      - 方法实现: pcml/method.md
+      - 实测结果: pcml/results.md
   - PMD—光度立体融合:
       - 概览: pmd/index.md
       - 方法流程: pmd/method.md

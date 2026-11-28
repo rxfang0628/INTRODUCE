@@ -6,12 +6,13 @@
 
 ### [UEF-Net：双分支证据冲突建模与像素门控融合](uefnet/index.md)
 
-面向工业质检的零样本异常检测与缺陷定位框架。CLIP 骨干冻结，推理阶段不更新参数、不使用目标类任何正常或异常样本；以冻结 ViT 多层特征与领域文本原型的对比响应构成视觉证据，以可学习领域提示构成语义证据，经证据编码与冲突折扣、Dempster 聚合、冲突感知像素门控回退，输出图像级异常分与像素级缺陷图。
+面向工业质检的零样本异常检测与缺陷定位框架。CLIP 骨干冻结，推理阶段不更新参数；以冻结 ViT 多层特征与领域文本原型的对比响应构成视觉证据，以可学习领域提示构成语义证据，经证据编码与冲突折扣、Dempster 聚合、冲突感知像素门控回退，输出图像级异常分与像素级缺陷图。目标类样本的使用口径以[研究进展](uefnet/progress.md)第 6 节为准。
 
 - 方向：零样本工业异常检测（ZSIAD）/ 证据理论驱动的多分支融合
 - 关键模块：多尺度视觉响应与逐层标准化、语义提示分支、跨分支证据估计（CBE）、证据聚合（PFB）、冲突感知像素门控（CAPGF）
 - 主结果：五数据集均值 Img AUROC 97.3 / Pix AP 64.5 / PRO 95.9，像素 AP 较次优提升 8.0 个百分点
-- 入口：[概览](uefnet/index.md) · [方法架构](uefnet/method.md) · [实验结果](uefnet/results.md) · [对比实验](uefnet/sota.md) · [消融实验](uefnet/ablation.md) · [机制分析](uefnet/analysis.md)
+- 最新进展：局部学习分支 v1–v4 四轮在目标域全部未超过 v1，主线定稿不变；评测口径已重写
+- 入口：[概览](uefnet/index.md) · [方法架构](uefnet/method.md) · [实验结果](uefnet/results.md) · [对比实验](uefnet/sota.md) · [消融实验](uefnet/ablation.md) · [机制分析](uefnet/analysis.md) · [研究进展](uefnet/progress.md)
 
 ### [PCML：纹理—语义双分支的像素级融合异常检测](pcml/index.md)
 

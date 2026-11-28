@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/analysis/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>机制分析 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="../sota/" class="dropdown-item">对比实验</a>
+</li>
+                                    
+<li>
+    <a href="../ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">机制分析</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">研究进展</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PCML 双分支像素融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pcml/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/method/" class="dropdown-item">方法实现</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/results/" class="dropdown-item">实测结果</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/results/" class="dropdown-item">实测结果集</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ablation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../progress/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/analysis.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">机制分析</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">超参数敏感性</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">门控机制可视化</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">光照鲁棒性</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">机制分析</h1>
+<h2 id="_2">超参数敏感性</h2>
+<p><img alt="门控阈值 τ、温度 T 与上下文权重 γ 的敏感性扫描（Img AUROC / Pix AUROC / PRO）" src="../images/hyperparam_scan.png" /></p>
+<p>在较宽范围内扫描门控阈值 τ、温度 T 与上下文权重 γ，三项指标曲线均近水平。这种稳定性不是调参的结果，而是融合头构造决定的：可训练部分只有轻量 MLP，门控主体是规则算子，决策由可解释的冲突统计驱动，超参只调节门控曲线形状。</p>
+<ul>
+<li>冲突值集中在 0–0.3 的窄区间，τ 漂移时门控系数始终落在 0.47–0.55 的温和混合区间，不改变两路证据的相对强弱。</li>
+<li>T 只调节混合的软硬程度；过大时趋于硬开关，才带来约 1–2 个百分点的小幅下降。</li>
+<li>局部—全局两级冲突统计已刻画邻域与整体分歧，γ 控制的邻域二次修正属冗余平滑，贡献有限，取默认 0.2 即可。</li>
+</ul>
+<p>总体上，"冲突度量驱动 + 规则算子 + 温和混合门控"的设计使超参不敏感、决策依据可复核，便于跨产线参数复用。</p>
+<h2 id="_3">门控机制可视化</h2>
+<p>在 carpet、bottle、transistor 三类上分层采样正常像素 9000 个、异常像素 8590 个，分别从门控系数的分布与四个信号的箱线图观察融合行为。</p>
+<p><img alt="按 GT 分层的逐像素门控系数分布（蓝=正常，红=异常）" src="../images/gate_hist.png" /></p>
+<p>异常像素的门控系数集中在低区间（均值 0.363，主峰约 0.35），正常像素集中在高区间（均值 0.480，主峰约 0.52），两分布主体分离。异常处两路冲突增大，门控相应下调、远离 0.5 的固定混合；正常处冲突较小，维持接近 0.5 的混合。这说明门控不是常数混合器，而是随冲突自适应加权，也解释了 gate_off（固定 0.5）因无法在高冲突位置调整权重而掉点。需要强调：门控本身不判定异常，判别仍由最终异常分完成。</p>
+<p><img alt="正常与异常像素在 tex / sem / conflict / gate 四个信号上的箱线图对比" src="../images/gate_boxplot.png" /></p>
+<p>四幅子图对应信号从分支响应、冲突提炼到门控输出的传递链条：</p>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>正常中位数</th>
+<th>异常中位数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纹理距离 tex</td>
+<td>0.3</td>
+<td>2.3</td>
+<td>区分度最强的单分支判别依据；局限是纹理波动会在背景产生椒盐噪声</td>
+</tr>
+<tr>
+<td>语义分数 sem</td>
+<td>≈0.46</td>
+<td>≈0.46</td>
+<td>两类几乎重合、单独不具备判别力，提供不随纹理起伏的稳定背景参照</td>
+</tr>
+<tr>
+<td>冲突值 abs(tex − sem)</td>
+<td>0.20</td>
+<td>0.82</td>
+<td>继承 tex 判别力的同时以绝对值消除差值方向噪声，是干净的触发信号</td>
+</tr>
+<tr>
+<td>门控值 gate</td>
+<td>0.498</td>
+<td>0.348</td>
+<td>分离方向与 conflict 一致，证明门控确实在像素级执行差异化加权，而非固定等权混合</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">光照鲁棒性</h2>
+<p><img alt="光照与对比度扰动下的鲁棒性对比（柱：Pix AUROC；折线：Img AUROC）" src="../images/lighting_robust.png" /></p>
+<p>纯纹理记忆库方法（如 PatchCore）依赖正常样本的纹理距离建模，光照与对比度退化会放大纹理距离波动，使边缘与背景更易被判为异常。为检验现场成像条件波动下的可用性，在 MVTec AD 测试集施加七组扰动——亮度 ±40%、对比度 ±40%、混合扰动（亮度 0.6 / 对比度 1.4）、极端扰动（亮度与对比度均减半）——与 PatchCore 对比。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>UEF-Net 相对 PatchCore（图像级 / 像素级）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正常条件</td>
+<td>已小幅领先</td>
+</tr>
+<tr>
+<td>单一扰动（亮度/对比度 ±40%）</td>
+<td>优势随扰动增强而扩大</td>
+</tr>
+<tr>
+<td>混合扰动</td>
+<td>+1.1 / +1.7 个百分点</td>
+</tr>
+<tr>
+<td>极端扰动</td>
+<td>增益扩大至 +2.1（图像级 / 像素级均领先）</td>
+</tr>
+</tbody>
+</table>
+<p>极端扰动下 PatchCore 的图像级与像素级 AUROC 分别下降 2.2、2.5 个百分点，UEF-Net 仅下降 1.5、1.9，像素级仍保持 94.4%。扰动越强、条件越复合，两类方法的差距越大。</p>
+<p>这一差距来自双分支互补与门控回退：CLIP 语义相似度对亮度偏移不敏感，提供稳定的参照信号；当光照漂移使纹理距离与语义响应出现分歧时，门控回退融合，抑制被光照扰动放大的纹理假阳性。因此在退化成像条件下，UEF-Net 仍能保持较好的缺陷定位精度，相对纯记忆库方法具备更强的现场可用性。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

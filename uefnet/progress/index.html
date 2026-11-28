@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/progress/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>研究进展 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="../sota/" class="dropdown-item">对比实验</a>
+</li>
+                                    
+<li>
+    <a href="../ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="../analysis/" class="dropdown-item">机制分析</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">研究进展</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PCML 双分支像素融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pcml/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/method/" class="dropdown-item">方法实现</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/results/" class="dropdown-item">实测结果</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/results/" class="dropdown-item">实测结果集</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../analysis/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../pcml/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/progress.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#2026-11-28" class="nav-link">研究进展（截至 2026-11-28）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">状态总览</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 时间线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 指标被重写，旧数字作废</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 局部学习：四轮全部负结果</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 骨干对照：一次显存事故暴露的结构问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 协议边界（引用这些数字前必须知道）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 一处必须解决的口径冲突</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 待办</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="2026-11-28">研究进展（截至 2026-11-28）</h1>
+<p>本页记录主线定稿之后的工作：一条新的局部学习分支（v1–v4）、一次评测指标的重新定义、以及九套 SOTA 基线的归集。<strong>结论先说：新分支四轮全部在目标域回退，主线数值不变。</strong></p>
+<h2 id="_1">状态总览</h2>
+<table>
+<thead>
+<tr>
+<th>分支</th>
+<th>骨干与思路</th>
+<th>最新状态</th>
+<th>目标域表现</th>
+<th>是否进论文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主线 UEF-Net</td>
+<td>CLIP ViT-L/14-336 + 多尺度纹理库 + 证据门控</td>
+<td>已定稿</td>
+<td>MVTec 图像 98.8 / 像素 96.9</td>
+<td>是</td>
+</tr>
+<tr>
+<td>局部学习 v1</td>
+<td>DINOv3 ViT-L/16 冻结 + 约 16 万参数局部头</td>
+<td>保留为分支基线</td>
+<td>MVTec 89.2 / 88.5；BTAD 88.6</td>
+<td>否</td>
+</tr>
+<tr>
+<td>局部学习 v2–v4</td>
+<td>耦合 / 解耦 / 源域原型</td>
+<td>均已判负</td>
+<td>四轮全部未超过 v1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>指标重定义</td>
+<td>AUPRO 与 F1 口径重写</td>
+<td>已生效</td>
+<td>新旧指标不可直接比较</td>
+<td>是</td>
+</tr>
+<tr>
+<td>SOTA 基线</td>
+<td>九套开源方法归集</td>
+<td>部分适配完成</td>
+<td>见<a href="../sota/">对比实验</a></td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 时间线</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>工作</th>
+<th>产出</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.24</td>
+<td>远程评测脚本族建立</td>
+<td>骨干对照、1-shot 曲线、弱类检索、纯纹理、少样本等多支脚本</td>
+<td>评测入口统一</td>
+</tr>
+<tr>
+<td>11.25</td>
+<td>CLIP 与 DINOv3 骨干对照首跑</td>
+<td>CLIP 518/网格 37 与 DINOv3 512/网格 32 两套</td>
+<td>CLIP 支路在 16 GB 卡上因手写注意力矩阵溢出，见下节</td>
+</tr>
+<tr>
+<td>11.26</td>
+<td>SubspaceAD 适配、双尺度编码器分支</td>
+<td>few-shot PCA 子空间基线可运行</td>
+<td>SubspaceAD 属 few-shot，不进零样本主表</td>
+</tr>
+<tr>
+<td>11.27</td>
+<td>指标修复与门控校验</td>
+<td><code>metrics_v2</code>、AUPRO 重定义、门控权重质量检查</td>
+<td>旧指标作废，早期数字不可复用</td>
+</tr>
+<tr>
+<td>11.27</td>
+<td>局部学习 v1</td>
+<td>源域选定局部头（MIL + 合成缺陷）</td>
+<td>MVTec 图像 0.4692 → 0.8918</td>
+</tr>
+<tr>
+<td>11.27</td>
+<td>局部学习 v2</td>
+<td>三随机种子 + 集成</td>
+<td>目标域全面回退</td>
+</tr>
+<tr>
+<td>11.27</td>
+<td>局部学习 v3</td>
+<td>图像与定位分支解耦</td>
+<td>像素恢复至 v1，图像仍为 v2</td>
+</tr>
+<tr>
+<td>11.28</td>
+<td>局部学习 v4</td>
+<td>源域正常原型库 + 图像融合</td>
+<td>图像 −0.13 / −1.30 点，仍不及 v1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 指标被重写，旧数字作废</h2>
+<p>11-27 的修复把评测口径整体替换，这不是微调，而是换了尺子：</p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>旧口径</th>
+<th>新口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图像指标</td>
+<td>仅异常图参与</td>
+<td>全部正常与异常测试图参与，异常图缺掩码即报错</td>
+</tr>
+<tr>
+<td>AUPRO</td>
+<td>自定义积分</td>
+<td>FPR ≤ 0.30、4096 级阈值近似、区域等权、256×256 网格、4 邻域连通</td>
+</tr>
+<tr>
+<td>F1 / IoU</td>
+<td>单点阈值</td>
+<td>完整 PR 曲线取最优，明确标记为 oracle 指标</td>
+</tr>
+<tr>
+<td>门控权重</td>
+<td>无校验</td>
+<td>强制检查尺度、偏置、NaN，禁止随机门控参与推理</td>
+</tr>
+</tbody>
+</table>
+<p>因此<strong>本轮及以后的任何数字都不能与 11-26 之前的结果直接相减</strong>。这也是下文局部学习基线（图像 0.4692）看起来异常低的原因之一——它是在新口径下重算的旧结构。</p>
+<h2 id="3">3. 局部学习：四轮全部负结果</h2>
+<p>思路是把"图像级判别"与"像素级定位"交给一个冻结 DINOv3 骨干上的轻量局部头：浅/中/深三组 patch 特征经固定正交投影压到 128 维缓存，头部输入为 patch 与其 5×5 邻域差分，约 16 万参数；图像分取最高 16 个 patch 均值。训练监督来自外部辅助域的图像标签，以及由辅助域正常图合成的 768 张带掩码局部缺陷图。</p>
+<p><img alt="局部学习四轮对照" src="../images/local_learning_ab.png" /></p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>MVTec 图像</th>
+<th>MVTec 像素</th>
+<th>MVTec 像素 AP</th>
+<th>MVTec PRO</th>
+<th>BTAD 图像</th>
+<th>BTAD 像素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧多原型基线</td>
+<td>0.4692</td>
+<td>0.8598</td>
+<td>0.1960</td>
+<td>0.7020</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>v1 局部头</td>
+<td><strong>0.8918</strong></td>
+<td><strong>0.8855</strong></td>
+<td><strong>0.4265</strong></td>
+<td><strong>0.8552</strong></td>
+<td><strong>0.8861</strong></td>
+<td><strong>0.9462</strong></td>
+</tr>
+<tr>
+<td>v2 耦合学习</td>
+<td>0.8880</td>
+<td>0.8578</td>
+<td>0.3831</td>
+<td>0.8046</td>
+<td>0.8710</td>
+<td>0.9341</td>
+</tr>
+<tr>
+<td>v3 解耦</td>
+<td>0.8880</td>
+<td>0.8855</td>
+<td>0.4265</td>
+<td>0.8552</td>
+<td>0.8710</td>
+<td>0.9462</td>
+</tr>
+<tr>
+<td>v4 源域原型</td>
+<td>0.8905</td>
+<td>0.8855</td>
+<td>0.4265</td>
+<td>0.8552</td>
+<td>0.8731</td>
+<td>0.9462</td>
+</tr>
+</tbody>
+</table>
+<p>三条读法：</p>
+<ul>
+<li><strong>v1 的价值来自修好了坏掉的图像分支，不是来自"学习"本身</strong>。旧结构图像级 0.4692 低于随机，v1 把它拉到 0.8918；但像素级只从 0.8598 升到 0.8855，定位能力本来就在。</li>
+<li><strong>v2 的耦合把定位拖坏了</strong>。像素级从 88.5 掉到 85.8（−2.7 点），像素 AP 从 42.6 掉到 38.3。v3 把两分支解耦后定位回到 v1，但图像仍是 v2 的水平——说明耦合不是"顺手带上"，而是真实的负迁移。</li>
+<li><strong>v4 的原型证据接近无效</strong>。原型单独作为图像证据只有 0.4963（等同随机）；与 v2 融合后 0.8905，仍低于 v1 的 0.8918；BTAD 上退 1.3 点。</li>
+</ul>
+<h3 id="_2">最重要的一条：源域选型与目标表现背离</h3>
+<p>v2 三个种子在辅助域 VisA 保留类上的图像 AUROC 为 0.9257 / 0.9433 / 0.9578，按源域指标选出的最优种子是 0.9578；v4 的融合候选在源域达到 0.9579，<strong>比 v1 的 0.9351 高 2.3 点</strong>。但这些"源域最优"配置在 MVTec 与 BTAD 上全部回退。</p>
+<p>这不是实现问题，而是选型准则的问题：<strong>在辅助域上挑出来的最佳配置，与目标域表现负相关或至少不相关</strong>。由此定下两条纪律：</p>
+<ol>
+<li>源域提升不构成目标泛化的证据，只能作为"值得一试"的门槛；</li>
+<li>任何融合权重、候选选择与阈值都必须在源域上固定，再一次性读取目标结果，不允许用目标结果回头挑配置。</li>
+</ol>
+<p>v3 中源域像素指标更好的候选（0.6027 → 0.6173）也没有被采纳，主方案固定 v1 定位分支——这是刻意放弃"用选型指标顺带优化目标"的做法。</p>
+<h2 id="4">4. 骨干对照：一次显存事故暴露的结构问题</h2>
+<p>11-25 的 CLIP / DINOv3 对照在 CLIP 支路崩溃。根因不在显存容量，而在实现：</p>
+<ul>
+<li>输入 518，patch 14 → 37×37+1 = 1370 个 token，16 个注意力头，批 32；</li>
+<li>该支路的注意力是手写实现，且显式要求返回注意力权重，每个 block 都实际创建 32×16×1370×1370 的矩阵，单次约 3.58 GB；</li>
+<li>DINOv3 支路 token 数减半，走融合内核，不创建该矩阵，因此正常。</li>
+</ul>
+<p>处理方式是把注意力改为按需返回权重，并改用手写实现的融合内核路径；不再使用的注意力图累加代码一并移除。数学等价，显存占用下降一个量级。这条经验对后续任何扩大输入尺寸的实验都适用。</p>
+<h2 id="5">5. 协议边界（引用这些数字前必须知道）</h2>
+<ol>
+<li><strong>不是 training-free</strong>。局部头在辅助域 VisA 的 8 个类上训练，另 4 类做验证；辅助域真实掩码用于合成缺陷与候选诊断，不能再声称"只用图像级标签"。</li>
+<li><strong>MVTec 与 BTAD 已是开发集</strong>。方法结构本身就是照着早期 MVTec 弱点设计的，两套目标集都只能算开发评测，不是未触碰的最终测试。</li>
+<li><strong>辅助域与目标域存在语义关联</strong>。VisA 与 MVTec 都含 PCB、齿轮类工件，类别名与路径隔离不等于语义不相交。</li>
+<li><strong>SubspaceAD 是 few-shot</strong>。它在目标类 <code>train/good</code> 上拟合 PCA，只能进少样本基线表。</li>
+<li><strong>LOGIC 源域训练用像素掩码</strong>，与本文图像级弱监督设定不同，记录时不可混写。</li>
+</ol>
+<h2 id="6">6. 一处必须解决的口径冲突</h2>
+<p>主工程与消融脚本的纹理记忆库读的是 <code>{类别}/train/good</code>，即<strong>目标类正常训练图参与建库</strong>；而站点方法页与论文写法是"评测类不构建任何正常样本记忆库"。</p>
+<p>两者只能成立一个：</p>
+<ul>
+<li>若"零样本"定义为<strong>不重训、不用目标类测试样本</strong>，那么建库是协议的一部分，需在方法章明确写出"使用目标类正常图建库、零参数更新"；</li>
+<li>若定义为<strong>不使用目标类任何样本</strong>，那么现有权威数值是在更宽的口径下得到的，需要在严格口径下重测一遍并如实报告掉分。</li>
+</ul>
+<p>在这条定下来之前，不建议对外强调"完全不接触目标类样本"。</p>
+<h2 id="7">7. 待办</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高</td>
+<td>统一零样本口径（见第 6 节），据此修方法章与站点表述</td>
+</tr>
+<tr>
+<td>高</td>
+<td>11-24 至 11-26 的骨干对照、1-shot 曲线、弱类检索、双尺度分支结果补落盘为 JSON，避免只剩脚本</td>
+</tr>
+<tr>
+<td>中</td>
+<td>局部学习 v2–v4 归档为负结果记录，明确不进主表</td>
+</tr>
+<tr>
+<td>中</td>
+<td>预先注册选型准则（源域指标与目标读数的关系），再开新实验</td>
+</tr>
+<tr>
+<td>低</td>
+<td>站点论文数值与交接档案的 0.1–0.3 点差异逐项核对到日志</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

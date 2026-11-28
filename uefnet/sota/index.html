@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/sota/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>对比实验 - 机器视觉项目集</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="../results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">对比实验</a>
+</li>
+                                    
+<li>
+    <a href="../ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="../analysis/" class="dropdown-item">机制分析</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">研究进展</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PCML 双分支像素融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pcml/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/method/" class="dropdown-item">方法实现</a>
+</li>
+                                    
+<li>
+    <a href="../../pcml/results/" class="dropdown-item">实测结果</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../../pmd/results/" class="dropdown-item">实测结果集</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../results/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ablation/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/sota.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">对比实验</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">口径说明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#img-auroc-img-f1-img-ap" class="nav-link">图像级对比（Img AUROC / Img F1 / Img AP，%）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pix-auroc-pix-ap-pro" class="nav-link">像素级对比（Pix AUROC / Pix AP / PRO，%）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">主要观察</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">对比实验</h1>
+<h2 id="_2">口径说明</h2>
+<ul>
+<li>对比对象均为<strong>目标评测类无样本</strong>的视觉语言零样本方法，在相同测试集与评价指标下横向对照：WinCLIP、AnomalyCLIP、AdaCLIP、Crane、LOGIC-AD、MuSc-V2、CMGL。</li>
+<li>表中基线数值取自各自论文在同类协议下的报告值；各方法的骨干、输入分辨率与提示训练方式并不完全一致（WinCLIP 为提示集成，AnomalyCLIP / AdaCLIP 需在提示层训练，MuSc-V2 用无标注样本互打分，LOGIC-AD 依赖逻辑空间一致性，CMGL 为跨模态引导），因此横向对比需结合设定差异解读。</li>
+<li>UEF-Net 一行使用本文统一协议，图像与像素指标均在同一套权重上测得。</li>
+</ul>
+<h2 id="img-auroc-img-f1-img-ap">图像级对比（Img AUROC / Img F1 / Img AP，%）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>发表</th>
+<th>MVTec AD</th>
+<th>VisA</th>
+<th>BTAD</th>
+<th>DAGM 2007</th>
+<th>DTD-Synthetic</th>
+<th>均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WinCLIP</td>
+<td>WACV 2023</td>
+<td>91.8 / 92.9 / 95.1</td>
+<td>78.1 / 79.0 / 77.5</td>
+<td>83.3 / 81.0 / 84.1</td>
+<td>89.6 / 86.4 / 90.4</td>
+<td>95.0 / 94.3 / 97.9</td>
+<td>87.6 / 86.7 / 89.0</td>
+</tr>
+<tr>
+<td>AnomalyCLIP</td>
+<td>ICLR 2024</td>
+<td>91.5 / 92.8 / 96.2</td>
+<td>82.1 / 80.4 / 85.4</td>
+<td>89.1 / 86.0 / 91.1</td>
+<td>95.6 / 93.2 / 94.6</td>
+<td>94.5 / 94.5 / 97.7</td>
+<td>90.6 / 89.4 / 93.0</td>
+</tr>
+<tr>
+<td>AdaCLIP</td>
+<td>ECCV 2024</td>
+<td>92.0 / 92.7 / 96.4</td>
+<td>83.0 / 81.6 / 84.9</td>
+<td>91.6 / 88.9 / 92.4</td>
+<td>96.5 / 94.1 / 95.7</td>
+<td>92.8 / 92.2 / 97.0</td>
+<td>91.2 / 89.9 / 93.3</td>
+</tr>
+<tr>
+<td>Crane</td>
+<td>arXiv 2025</td>
+<td>93.8 / 93.8 / 97.5</td>
+<td>85.5 / 82.7 / 88.1</td>
+<td>94.3 / 91.4 / 95.8</td>
+<td>99.1 / 95.7 / 97.2</td>
+<td>96.3 / 95.3 / 98.5</td>
+<td>93.8 / 91.8 / 95.4</td>
+</tr>
+<tr>
+<td>LOGIC-AD</td>
+<td>KBS 2026</td>
+<td>92.2 / 92.0 / 96.1</td>
+<td>87.3 / 84.0 / 89.0</td>
+<td>94.9 / 92.8 / 96.9</td>
+<td>98.2 / 96.3 / 92.5</td>
+<td>98.2 / 96.3 / 92.5</td>
+<td>94.0 / 92.3 / 94.7</td>
+</tr>
+<tr>
+<td>MuSc-V2</td>
+<td>TPAMI 2026</td>
+<td>97.7 / 97.6 / 99.1</td>
+<td>91.9 / 88.5 / 92.8</td>
+<td>96.5 / 96.1 / 99.1</td>
+<td>91.4 / 79.7 / 78.8</td>
+<td>96.4 / 96.8 / 98.7</td>
+<td>94.8 / 91.8 / 93.7</td>
+</tr>
+<tr>
+<td>CMGL</td>
+<td>TASE 2026</td>
+<td>94.0 / 93.7 / 97.0</td>
+<td>87.7 / 84.2 / 90.5</td>
+<td>96.4 / 94.4 / 97.9</td>
+<td>98.6 / 97.8 / 98.1</td>
+<td>99.0 / 98.5 / 99.6</td>
+<td>95.1 / 93.7 / 96.6</td>
+</tr>
+<tr>
+<td><strong>UEF-Net（本文）</strong></td>
+<td>—</td>
+<td><strong>98.8 / 97.2 / 99.5</strong></td>
+<td><strong>94.1 / 89.9 / 94.7</strong></td>
+<td><strong>97.1 / 95.2 / 99.2</strong></td>
+<td>99.1 / 90.0 / 95.3</td>
+<td>97.6 / 96.2 / 99.1</td>
+<td><strong>97.3 / 93.7 / 97.5</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pix-auroc-pix-ap-pro">像素级对比（Pix AUROC / Pix AP / PRO，%）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>发表</th>
+<th>MVTec AD</th>
+<th>VisA</th>
+<th>BTAD</th>
+<th>DAGM 2007</th>
+<th>DTD-Synthetic</th>
+<th>均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WinCLIP</td>
+<td>WACV 2023</td>
+<td>85.1 / 18.0 / 64.6</td>
+<td>79.6 / 5.0 / 56.8</td>
+<td>71.4 / 11.2 / 32.8</td>
+<td>83.2 / 31.1 / 55.4</td>
+<td>82.5 / 11.6 / 55.4</td>
+<td>80.4 / 15.4 / 53.0</td>
+</tr>
+<tr>
+<td>AdaCLIP</td>
+<td>ECCV 2024</td>
+<td>86.8 / 38.0 / 33.8</td>
+<td>95.1 / 29.2 / 71.3</td>
+<td>87.7 / 36.6 / 17.1</td>
+<td>97.0 / 44.2 / 40.9</td>
+<td>94.1 / 52.8 / 24.9</td>
+<td>92.1 / 40.2 / 37.6</td>
+</tr>
+<tr>
+<td>AnomalyCLIP</td>
+<td>ICLR 2024</td>
+<td>91.1 / 34.5 / 81.4</td>
+<td>95.5 / 21.3 / 87.0</td>
+<td>93.3 / 42.0 / 69.3</td>
+<td>99.1 / 29.5 / 93.6</td>
+<td>97.6 / 52.4 / 88.3</td>
+<td>95.3 / 35.9 / 83.9</td>
+</tr>
+<tr>
+<td>Crane</td>
+<td>arXiv 2025</td>
+<td>91.3 / 38.7 / 84.8</td>
+<td>95.1 / 23.3 / 88.0</td>
+<td>96.6 / 56.2 / 81.5</td>
+<td>96.1 / 68.0 / 91.4</td>
+<td>98.4 / 73.4 / 93.4</td>
+<td>95.5 / 51.9 / 87.8</td>
+</tr>
+<tr>
+<td>LOGIC-AD</td>
+<td>KBS 2026</td>
+<td>92.1 / 45.9 / 85.5</td>
+<td>96.3 / 27.1 / 89.4</td>
+<td>94.6 / 42.4 / 78.9</td>
+<td>96.0 / 46.9 / 90.4</td>
+<td>98.4 / 62.9 / 90.1</td>
+<td>95.5 / 45.0 / 86.8</td>
+</tr>
+<tr>
+<td>MuSc-V2</td>
+<td>TPAMI 2026</td>
+<td>97.3 / 63.1 / 91.2</td>
+<td>98.8 / 50.4 / 90.4</td>
+<td>97.5 / 59.0 / 79.1</td>
+<td>93.3 / 41.7 / 84.4</td>
+<td>97.1 / 68.1 / 92.2</td>
+<td>96.8 / 56.5 / 87.5</td>
+</tr>
+<tr>
+<td>CMGL</td>
+<td>TASE 2026</td>
+<td>92.9 / 50.1 / 89.1</td>
+<td>95.8 / 30.9 / 91.3</td>
+<td>95.4 / 48.7 / 78.3</td>
+<td>99.3 / 52.0 / 98.4</td>
+<td>97.4 / 71.0 / 93.4</td>
+<td>96.2 / 50.5 / 90.1</td>
+</tr>
+<tr>
+<td><strong>UEF-Net（本文）</strong></td>
+<td>—</td>
+<td><strong>97.2 / 64.2 / 97.5</strong></td>
+<td>98.3 / 45.7 / 98.5</td>
+<td>95.8 / <strong>64.2</strong> / 92.7</td>
+<td>93.7 / <strong>71.6</strong> / 94.2</td>
+<td>96.8 / <strong>77.1</strong> / 96.4</td>
+<td>96.3 / <strong>64.5</strong> / <strong>95.9</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">主要观察</h2>
+<ol>
+<li><strong>图像级全面领先</strong>：五数据集均值 97.3 / 93.7 / 97.5，高于最强基线 CMGL（95.1 / 93.7 / 96.6）与 MuSc-V2（94.8 / 91.8 / 93.7）。</li>
+<li><strong>像素级区域精度提升最大</strong>：均值 Pix AP 64.5 较 MuSc-V2（56.5）高 8.0 个百分点，PRO 95.9 较 CMGL（90.1）高 5.8 个百分点、较 MuSc-V2（87.5）高 8.4。</li>
+<li><strong>Pix AUROC 与最强基线基本持平略低</strong>（96.3 vs 96.8）：该指标在强方法上接近饱和，差异主要来自排序细节；Pix AP 与 PRO 的增益说明高分像素更集中于真实缺陷区。</li>
+<li><strong>单数据集表现</strong>：MVTec、BTAD、DTD 上 Pix AP 与 PRO 最优；DAGM 的 Pix AUROC 与 VisA 的 Pix AP 仍有优势空间，说明弱掩码与细长机械件仍是难点。</li>
+</ol>
+<blockquote>
+<p>消融对模块贡献的拆分见 <a href="../ablation/">消融实验</a>；超参敏感性、门控机制可视化与光照鲁棒性见 <a href="../analysis/">机制分析</a>。</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

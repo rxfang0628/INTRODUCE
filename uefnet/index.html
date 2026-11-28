@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://rxfang0628.github.io/INTRODUCE/uefnet/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>概览 - 机器视觉项目集</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">机器视觉项目集</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UEF-Net 零样本异常检测</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">概览</a>
+</li>
+                                    
+<li>
+    <a href="method/" class="dropdown-item">方法架构</a>
+</li>
+                                    
+<li>
+    <a href="results/" class="dropdown-item">实验结果</a>
+</li>
+                                    
+<li>
+    <a href="sota/" class="dropdown-item">对比实验</a>
+</li>
+                                    
+<li>
+    <a href="ablation/" class="dropdown-item">消融实验</a>
+</li>
+                                    
+<li>
+    <a href="analysis/" class="dropdown-item">机制分析</a>
+</li>
+                                    
+<li>
+    <a href="progress/" class="dropdown-item">研究进展</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PCML 双分支像素融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../pcml/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../pcml/method/" class="dropdown-item">方法实现</a>
+</li>
+                                    
+<li>
+    <a href="../pcml/results/" class="dropdown-item">实测结果</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PMD—光度立体融合</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../pmd/" class="dropdown-item">概览</a>
+</li>
+                                    
+<li>
+    <a href="../pmd/method/" class="dropdown-item">方法流程</a>
+</li>
+                                    
+<li>
+    <a href="../pmd/results/" class="dropdown-item">实测结果集</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="method/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/rxfang0628/INTRODUCE/edit/master/docs/uefnet/index.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#uef-net" class="nav-link">UEF-Net：双分支证据冲突建模与像素门控融合</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">研究背景</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">现有路线的局限与本文的科学问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">方法概览</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">主要贡献</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">主要结果（五数据集统一零样本评测）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2026-11-28" class="nav-link">当前进展（2026-11-28）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">方法局限与展望</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="uef-net">UEF-Net：双分支证据冲突建模与像素门控融合</h1>
+<p>UEF-Net（Uncertainty-Guided Evidential Fusion Network）是一套面向<strong>零样本工业异常检测</strong>的融合框架。它在目标评测类别<strong>不提供任何正常或异常样本、也没有像素级标注</strong>的条件下，同时完成图像级异常判定与像素级缺陷定位；CLIP 骨干全程冻结，只有提示层、特征投影与融合头在外部辅助数据集上学习。</p>
+<h2 id="_1">研究背景</h2>
+<p>工业异常检测的目标是判断工件图像是否存在缺陷，并在存在缺陷时定位其像素区域。传统监督范式需要为每个产品类别采集正常与缺陷样本、逐类训练模型，难以适配小批量、多品类的柔性制造场景。零样本设定把这一负担转移到可迁移的先验上：评测类不参与任何训练或建模，仅借助冻结的跨模态语义先验与在外部辅助数据上学到的提示表示判别未见类别。这一设定在 3C 电子、新能源电池、半导体封测等快速换线的产线上有直接价值——新工件上线时无需采缺陷样本、无需重训模型，即可获得可用的初版检测能力。</p>
+<h2 id="_2">现有路线的局限与本文的科学问题</h2>
+<p>现有方法沿三条路线发展，各自的短板恰好互补，却难以直接结合：</p>
+<ul>
+<li><strong>纯视觉嵌入路线</strong>（记忆库最近邻、知识蒸馏、自监督建模）：同源场景定位精度高，但跨类别迁移时正常分布先验不足，输出为纯统计距离、缺少语义解释性。</li>
+<li><strong>视觉语言路线</strong>（CLIP 提示学习）：具备开放语义，跨类别判别强，但像素定位偏粗，热力图依赖浅层特征上采样，对划痕、压痕、纹理错乱等小面积缺陷召回不足。</li>
+<li><strong>双路融合路线</strong>：多在特征或响应层直接加权平均，只在下游"合并分数"。</li>
+</ul>
+<p>问题的关键在最后一条：加权平均仅在两分支判断一致时稳定。当结论相互矛盾（视觉分支可疑、语义分支判正常）时，平均只会得到模糊的中间分数——既不利用冲突本身的信息，也没有可解释的不确定性度量。</p>
+<blockquote>
+<p><strong>本文的科学问题</strong>：在目标类无样本、不使用缺陷像素标签的条件下，如何对视觉与语义两路异常证据进行统一建模，显式度量并利用<strong>逐像素证据冲突</strong>，使模型在证据一致时获得融合增益、在证据冲突时能够<strong>稳健回退</strong>，而不产生模糊的中间决策。</p>
+</blockquote>
+<h2 id="_3">方法概览</h2>
+<p>UEF-Net 沿"特征抽取 — 证据建模 — 冲突门控融合"的推理链条逐级处理输入：</p>
+<ol>
+<li><strong>视觉分支</strong>：冻结 ViT 第 6/12/18/24 层多尺度补丁特征，经投影后与外部辅助集学到的领域文本原型计算相似度偏差，逐层 z-score 标准化后等权聚合为视觉异常图；不构建面向目标类的正常样本记忆库。</li>
+<li><strong>语义分支</strong>：可学习领域提示生成正常、异常及属性文本嵌入，与视觉特征逐位置对齐，输出与视觉图同分辨率的语义异常图。</li>
+<li><strong>CBE（跨分支估计器）</strong>：把两路异常图编码为正常、异常、不确定三类证据质量，以四维像素级冲突统计驱动自适应折扣。</li>
+<li><strong>PFB（证据聚合）</strong>：在折扣证据上执行 Dempster 组合，得到融合证据与"异常证据 + 不确定证据加权"的保守异常分。</li>
+<li><strong>CAPGF（冲突感知像素门控融合）</strong>：逐像素估计门控权重，低冲突区域采纳证据融合结果，高冲突位置回退到视觉与语义等权保守融合，抑制误检的空间扩散。</li>
+</ol>
+<h2 id="_4">主要贡献</h2>
+<ol>
+<li><strong>统一的双分支证据表示与冲突感知融合框架</strong>：两路异常图分别编码为三类证据质量，以像素级冲突驱动折扣与门控，一致时用证据组合、冲突处回退保守融合。</li>
+<li><strong>多尺度视觉特征与领域提示对齐机制</strong>：融合 ViT 第 6/12/18/24 层补丁特征，在辅助集上学习领域文本原型与特征投影，消除层间量纲差异；等权融合不引入面向目标类的记忆样本。</li>
+<li><strong>CBE 与 PFB 的像素级证据估计与聚合</strong>：两个参数独立的证据编码器分别建模两路证据，冲突统计驱动折扣系数；PFB 在无额外参数条件下执行 Dempster 归一化组合并给出保守异常分。</li>
+<li><strong>CAPGF 冲突感知像素门控</strong>：融合局部与全局两种尺度的冲突统计，经 Sigmoid 门控与高斯空间平滑，在像素粒度混合证据融合与等权融合结果。</li>
+</ol>
+<h2 id="_5">主要结果（五数据集统一零样本评测）</h2>
+<table>
+<thead>
+<tr>
+<th>数据集（类别数）</th>
+<th>Img AUROC</th>
+<th>Img F1</th>
+<th>Img AP</th>
+<th>Pix AUROC</th>
+<th>Pix AP</th>
+<th>PRO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MVTec AD（15）</td>
+<td><strong>98.8</strong></td>
+<td>97.2</td>
+<td><strong>99.5</strong></td>
+<td>97.2</td>
+<td>64.2</td>
+<td><strong>97.5</strong></td>
+</tr>
+<tr>
+<td>VisA（12）</td>
+<td><strong>94.1</strong></td>
+<td>89.9</td>
+<td><strong>94.7</strong></td>
+<td>98.3</td>
+<td>45.7</td>
+<td>98.5</td>
+</tr>
+<tr>
+<td>BTAD（3）</td>
+<td>97.1</td>
+<td>95.2</td>
+<td>99.2</td>
+<td>95.8</td>
+<td>64.2</td>
+<td>92.7</td>
+</tr>
+<tr>
+<td>DAGM 2007（10）</td>
+<td><strong>99.1</strong></td>
+<td>90.0</td>
+<td>95.3</td>
+<td>93.7</td>
+<td><strong>71.6</strong></td>
+<td>94.2</td>
+</tr>
+<tr>
+<td>DTD-Synthetic（12）</td>
+<td>97.6</td>
+<td>96.2</td>
+<td>99.1</td>
+<td>96.8</td>
+<td><strong>77.1</strong></td>
+<td>96.4</td>
+</tr>
+<tr>
+<td>五数据集均值</td>
+<td><strong>97.3</strong></td>
+<td>93.7</td>
+<td><strong>97.5</strong></td>
+<td>96.3</td>
+<td><strong>64.5</strong></td>
+<td><strong>95.9</strong></td>
+</tr>
+</tbody>
+</table>
+<p>图像级指标在全部五个数据集上优于对比方法；像素级上 Pix AP、PRO 的增益最明显——Pix AP 较次优方法提升 8.0 个百分点，PRO 相对 MuSc-V2 提升 8.4 个百分点。Pix AUROC 略低于次优（−0.5），原因是强方法的排序指标已接近饱和，而该指标对分数分布形态不敏感。</p>
+<blockquote>
+<p>完整对比与口径说明见 <a href="sota/">对比实验</a>，消融与机制分析见 <a href="ablation/">消融实验</a>、<a href="analysis/">机制分析</a>。</p>
+</blockquote>
+<h2 id="2026-11-28">当前进展（2026-11-28）</h2>
+<p>主线数值已定稿，此后开辟的局部学习分支（DINOv3 冻结骨干 + 轻量局部头）完成四轮实验，<strong>四轮在目标域均未超过其自身第一版</strong>，主线结果不受影响。</p>
+<table>
+<thead>
+<tr>
+<th>分支</th>
+<th>目标域表现</th>
+<th>处置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主线 UEF-Net</td>
+<td>MVTec 图像 98.8 / 像素 96.9</td>
+<td>定稿</td>
+</tr>
+<tr>
+<td>局部学习 v1</td>
+<td>MVTec 89.2 / 88.5；BTAD 88.6 / 94.6</td>
+<td>保留为分支基线</td>
+</tr>
+<tr>
+<td>局部学习 v2–v4</td>
+<td>全部回退（v2 像素 −2.7 点）</td>
+<td>判负归档</td>
+</tr>
+</tbody>
+</table>
+<p>同期完成了评测口径重写（AUPRO 改为 FPR ≤ 0.30、4096 级近似；F1/IoU 明确为 oracle 指标），因此<strong>本轮数字与 11-26 之前的结果不可直接相减</strong>。时间线、四轮明细、协议边界，以及一处尚待统一的零样本口径，见 <a href="progress/">研究进展</a>。</p>
+<h2 id="_6">方法局限与展望</h2>
+<ul>
+<li>像素热力图建立在 37×37 粗网格上，极低占比的小缺陷受分辨率约束；外观多变的类别图像级判别仍有波动。</li>
+<li>后续方向：引入高分辨率分层特征增强小缺陷表征；改进高冲突证据的再分配策略；结合时序一致性扩展到序列工件检测。</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

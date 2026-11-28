@@ -1,0 +1,26 @@
+/* 图片与表格的响应式约束：宽图在窄屏自动缩放，不产生横向滚动 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 结果页的大图留出上下呼吸空间 */
+p > img {
+  margin: 6px 0 20px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+}
+
+table td img {
+  display: block;
+  margin-bottom: 6px;
+}
+
+table td {
+  vertical-align: top;
+}
